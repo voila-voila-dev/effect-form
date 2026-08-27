@@ -15,8 +15,8 @@
 		"build": "tsc -b tsconfig.json",
 		"clean": "rm -rf packages/*/dist packages/*/*.tsbuildinfo",
 		"check-types": "tsc -b tsconfig.json",
-		"test": "vitest run",
-		"test:coverage": "vitest run --coverage",
+		"test": "bun run build && vitest run",
+		"test:coverage": "bun run build && vitest run --coverage",
 		"dead-code": "fallow"
 	},
 	"workspaces": {

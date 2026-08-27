@@ -4,18 +4,12 @@
 	"description": "React bindings for @voila.dev/effect-form",
 	"type": "module",
 	"publishConfig": {
-		"access": "public",
-		"exports": {
-			"./package.json": "./package.json",
-			".": "./dist/index.js",
-			"./*": "./dist/*.js",
-			"./internal/*": null
-		}
+		"access": "public"
 	},
 	"exports": {
 		"./package.json": "./package.json",
-		".": "./src/index.ts",
-		"./*": "./src/*.ts",
+		".": "./dist/index.js",
+		"./*": "./dist/*.js",
 		"./internal/*": null
 	},
 	"files": [
