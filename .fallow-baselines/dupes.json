@@ -1,0 +1,11 @@
+{
+  "clone_groups": [
+    "packages/form/src/FormAtoms.ts:923-927|packages/form/src/FormAtoms.ts:936-942"
+  ],
+  "clone_fingerprints": [
+    "dup:1b8c7b05:2"
+  ],
+  "normalized_clone_fingerprints": [
+    "dup:6f87acd9:2"
+  ]
+}

@@ -1,4 +1,13 @@
-# @lucas-barake/effect-form-react
+# @voila.dev/effect-form-react
+
+## 0.27.0
+
+First release of the `@voila.dev` fork, forked from `@lucas-barake/effect-form-react@0.26.0-beta.5`.
+
+### Minor Changes
+
+- Target the Effect v4 release candidate: peer ranges on `effect` and `@effect/atom-react` are now `>=4.0.0-rc.112 <4.0.1`.
+- Depend on an exact core version rather than a caret. The upstream beta published `"@lucas-barake/effect-form": "^0.25.0-beta.6"`, and that range resolves to the stable `0.25.0` - the Effect **v3** core, which imports the `effect/ParseResult` module the RC removed. Installing the v4 react bindings therefore pulled a core that could not load at all.
 
 ## 0.26.0-beta.5
 
@@ -9,7 +18,7 @@
 - [#97](https://github.com/lucas-barake/effect-form/pull/97) [`4bf0d88`](https://github.com/lucas-barake/effect-form/commit/4bf0d88a7e0de6d38bdd8b08af931b91918fcc98) Thanks [@lucas-barake](https://github.com/lucas-barake)! - declare `rootError` on `BuiltForm` in the react and solid bindings
 
 - Updated dependencies [[`e69326e`](https://github.com/lucas-barake/effect-form/commit/e69326ea5af521c254ae24d9d557c34359224c30), [`953fdf9`](https://github.com/lucas-barake/effect-form/commit/953fdf9cf0dca708248c823d876d32f1aac97af2), [`5e30412`](https://github.com/lucas-barake/effect-form/commit/5e30412536a11a61a2c39cfac6226ac12f89e2c6), [`e1239e8`](https://github.com/lucas-barake/effect-form/commit/e1239e8a64d3bc420184d713389191357f1adaa9), [`1f9b932`](https://github.com/lucas-barake/effect-form/commit/1f9b932e3f0a40fbecb26e54bbe7cf2d47aaa9c7), [`4e76a88`](https://github.com/lucas-barake/effect-form/commit/4e76a88ce14ee175b544ee5b9f1614a8b8f37c90), [`4bb950c`](https://github.com/lucas-barake/effect-form/commit/4bb950c1626284f7053b58d2e6e0a6705a8f1a15), [`860cd81`](https://github.com/lucas-barake/effect-form/commit/860cd8134dbef0ce3410570325104114c80bcb40), [`243a2b6`](https://github.com/lucas-barake/effect-form/commit/243a2b6e299c11375cdeb4dc0d45158c437e9999)]:
-  - @lucas-barake/effect-form@0.25.0-beta.6
+  - @voila.dev/effect-form@0.25.0-beta.6
 
 ## 0.26.0-beta.4
 
@@ -18,7 +27,7 @@
 - [#89](https://github.com/lucas-barake/effect-form/pull/89) [`cc64852`](https://github.com/lucas-barake/effect-form/commit/cc648525467a09b1908c7903428cb5a6ef349271) Thanks [@tim-smart](https://github.com/tim-smart)! - update effect
 
 - Updated dependencies [[`cc64852`](https://github.com/lucas-barake/effect-form/commit/cc648525467a09b1908c7903428cb5a6ef349271)]:
-  - @lucas-barake/effect-form@0.25.0-beta.5
+  - @voila.dev/effect-form@0.25.0-beta.5
 
 ## 0.26.0-beta.3
 
@@ -27,7 +36,7 @@
 - [#85](https://github.com/lucas-barake/effect-form/pull/85) [`ef7cc0d`](https://github.com/lucas-barake/effect-form/commit/ef7cc0dbf2b3d1ea78107ddcc46d3c8f093bbab5) Thanks [@lucas-barake](https://github.com/lucas-barake)! - update effect to v4 beta.52
 
 - Updated dependencies [[`ef7cc0d`](https://github.com/lucas-barake/effect-form/commit/ef7cc0dbf2b3d1ea78107ddcc46d3c8f093bbab5)]:
-  - @lucas-barake/effect-form@0.25.0-beta.4
+  - @voila.dev/effect-form@0.25.0-beta.4
 
 ## 0.26.0-beta.2
 
@@ -36,7 +45,7 @@
 - [#83](https://github.com/lucas-barake/effect-form/pull/83) [`6cc58b2`](https://github.com/lucas-barake/effect-form/commit/6cc58b27d16fe802f6e6ca488aa7cb04e847b06a) Thanks [@lucas-barake](https://github.com/lucas-barake)! - update effect to beta.18
 
 - Updated dependencies [[`6cc58b2`](https://github.com/lucas-barake/effect-form/commit/6cc58b27d16fe802f6e6ca488aa7cb04e847b06a)]:
-  - @lucas-barake/effect-form@0.25.0-beta.3
+  - @voila.dev/effect-form@0.25.0-beta.3
 
 ## 0.26.0-beta.1
 
@@ -49,7 +58,7 @@
 - [#81](https://github.com/lucas-barake/effect-form/pull/81) [`cb68e9e`](https://github.com/lucas-barake/effect-form/commit/cb68e9ed1f9270a1b9d68beacdbb7825119c3d74) Thanks [@lucas-barake](https://github.com/lucas-barake)! - Update effect peer dependency to v4 beta.14.
 
 - Updated dependencies [[`cb68e9e`](https://github.com/lucas-barake/effect-form/commit/cb68e9ed1f9270a1b9d68beacdbb7825119c3d74), [`cb68e9e`](https://github.com/lucas-barake/effect-form/commit/cb68e9ed1f9270a1b9d68beacdbb7825119c3d74)]:
-  - @lucas-barake/effect-form@0.25.0-beta.2
+  - @voila.dev/effect-form@0.25.0-beta.2
 
 ## 0.26.0-beta.0
 
@@ -73,7 +82,7 @@
 ### Patch Changes
 
 - Updated dependencies [[`495dbc7`](https://github.com/lucas-barake/effect-form/commit/495dbc789522a431ed8e33e42c7dacf1c3acc278)]:
-  - @lucas-barake/effect-form@0.25.0-beta.0
+  - @voila.dev/effect-form@0.25.0-beta.0
 
 ## 0.25.0
 
@@ -84,7 +93,7 @@
 ### Patch Changes
 
 - Updated dependencies [[`80f9f29`](https://github.com/lucas-barake/effect-form/commit/80f9f29dd6449a718ab2f8021cc30f81faa3a987)]:
-  - @lucas-barake/effect-form@0.24.0
+  - @voila.dev/effect-form@0.24.0
 
 ## 0.24.0
 
@@ -95,7 +104,7 @@
 ### Patch Changes
 
 - Updated dependencies [[`e13e3c7`](https://github.com/lucas-barake/effect-form/commit/e13e3c7699747313123d59df495c5bc6cd3a07eb)]:
-  - @lucas-barake/effect-form@0.23.0
+  - @voila.dev/effect-form@0.23.0
 
 ## 0.23.0
 
@@ -106,7 +115,7 @@
 ### Patch Changes
 
 - Updated dependencies [[`eca7665`](https://github.com/lucas-barake/effect-form/commit/eca7665e3fac4a690143419c1ba7d1c6f274efc0)]:
-  - @lucas-barake/effect-form@0.22.0
+  - @voila.dev/effect-form@0.22.0
 
 ## 0.22.0
 
@@ -117,7 +126,7 @@
 ### Patch Changes
 
 - Updated dependencies [[`da3db87`](https://github.com/lucas-barake/effect-form/commit/da3db87a3b3092b2a0b5a648addbbf0a2b9b2d32)]:
-  - @lucas-barake/effect-form@0.21.0
+  - @voila.dev/effect-form@0.21.0
 
 ## 0.21.0
 
@@ -128,7 +137,7 @@
 ### Patch Changes
 
 - Updated dependencies [[`3ef2f2c`](https://github.com/lucas-barake/effect-form/commit/3ef2f2c4ac73a247a7a75d24f255b3d9d941b7fa)]:
-  - @lucas-barake/effect-form@0.20.0
+  - @voila.dev/effect-form@0.20.0
 
 ## 0.20.0
 
@@ -139,7 +148,7 @@
 ### Patch Changes
 
 - Updated dependencies [[`c36e40d`](https://github.com/lucas-barake/effect-form/commit/c36e40d464995c82536dc42f5d5d67b756d773b5)]:
-  - @lucas-barake/effect-form@0.19.0
+  - @voila.dev/effect-form@0.19.0
 
 ## 0.19.0
 
@@ -156,7 +165,7 @@
 ### Patch Changes
 
 - Updated dependencies [[`f1c4e93`](https://github.com/lucas-barake/effect-form/commit/f1c4e934c8a7edcedc7680d48c2da75d105b4941)]:
-  - @lucas-barake/effect-form@0.18.0
+  - @voila.dev/effect-form@0.18.0
 
 ## 0.17.0
 
@@ -167,7 +176,7 @@
 ### Patch Changes
 
 - Updated dependencies [[`dbfe27d`](https://github.com/lucas-barake/effect-form/commit/dbfe27d85310d6bf52256c2ffead05dedbef9b7f)]:
-  - @lucas-barake/effect-form@0.17.0
+  - @voila.dev/effect-form@0.17.0
 
 ## 0.16.0
 
@@ -178,7 +187,7 @@
 ### Patch Changes
 
 - Updated dependencies [[`2fc45d4`](https://github.com/lucas-barake/effect-form/commit/2fc45d483d512a61238cc694ed7a4eb62a032ec1)]:
-  - @lucas-barake/effect-form@0.16.0
+  - @voila.dev/effect-form@0.16.0
 
 ## 0.15.0
 
@@ -189,7 +198,7 @@
 ### Patch Changes
 
 - Updated dependencies [[`25d0da1`](https://github.com/lucas-barake/effect-form/commit/25d0da132f6cedbace49a284e1995e42ff6a43b6)]:
-  - @lucas-barake/effect-form@0.15.0
+  - @voila.dev/effect-form@0.15.0
 
 ## 0.14.0
 
@@ -200,14 +209,14 @@
 ### Patch Changes
 
 - Updated dependencies [[`a69a9ec`](https://github.com/lucas-barake/effect-form/commit/a69a9ec02b828aa4b40e8d8ad973169758e17ffd)]:
-  - @lucas-barake/effect-form@0.14.0
+  - @voila.dev/effect-form@0.14.0
 
 ## 0.13.1
 
 ### Patch Changes
 
 - Updated dependencies [[`7fb5c96`](https://github.com/lucas-barake/effect-form/commit/7fb5c96823916c95d04c8763bfe1baf7ed77c3a7)]:
-  - @lucas-barake/effect-form@0.13.0
+  - @voila.dev/effect-form@0.13.0
 
 ## 0.13.0
 
@@ -237,7 +246,7 @@
 ### Patch Changes
 
 - Updated dependencies [[`dbe8735`](https://github.com/lucas-barake/effect-form/commit/dbe87355012421584a79f09c3fc2eaf3f7b21a48)]:
-  - @lucas-barake/effect-form@0.12.0
+  - @voila.dev/effect-form@0.12.0
 
 ## 0.12.0
 
@@ -328,7 +337,7 @@
 ### Patch Changes
 
 - Updated dependencies [[`8b45cec`](https://github.com/lucas-barake/effect-form/commit/8b45cece1fbcac05e9139e4134ab73646f222081)]:
-  - @lucas-barake/effect-form@0.11.0
+  - @voila.dev/effect-form@0.11.0
 
 ## 0.11.0
 
@@ -366,7 +375,7 @@
   ```
 
 - Updated dependencies [[`40d8018`](https://github.com/lucas-barake/effect-form/commit/40d80183313333c7615993ff5d84bf995c218b89)]:
-  - @lucas-barake/effect-form@0.10.0
+  - @voila.dev/effect-form@0.10.0
 
 ## 0.10.0
 
@@ -374,14 +383,14 @@
 
 - [#21](https://github.com/lucas-barake/effect-form/pull/21) [`ab80237`](https://github.com/lucas-barake/effect-form/commit/ab80237b5c7a338bf3e300ef539421cbef2438ce) Thanks [@lucas-barake](https://github.com/lucas-barake)! - Expose Path module as public API
 
-  The Path utilities (`schemaPathToFieldPath`, `isPathUnderRoot`, `isPathOrParentDirty`, `getNestedValue`, `setNestedValue`) are now exported as a public module via `@lucas-barake/effect-form/Path`.
+  The Path utilities (`schemaPathToFieldPath`, `isPathUnderRoot`, `isPathOrParentDirty`, `getNestedValue`, `setNestedValue`) are now exported as a public module via `@voila.dev/effect-form/Path`.
 
   This fixes an issue where `form-react` was importing from an unexported internal path, causing bundler errors in consuming applications.
 
 ### Patch Changes
 
 - Updated dependencies [[`ab80237`](https://github.com/lucas-barake/effect-form/commit/ab80237b5c7a338bf3e300ef539421cbef2438ce)]:
-  - @lucas-barake/effect-form@0.9.0
+  - @voila.dev/effect-form@0.9.0
 
 ## 0.9.0
 
@@ -395,7 +404,7 @@
 ### Patch Changes
 
 - Updated dependencies [[`9affd2b`](https://github.com/lucas-barake/effect-form/commit/9affd2bf87c1f0c910ca419d82c16e873cbf56ab)]:
-  - @lucas-barake/effect-form@0.8.0
+  - @voila.dev/effect-form@0.8.0
 
 ## 0.8.0
 
@@ -414,7 +423,7 @@
 ### Patch Changes
 
 - Updated dependencies [[`d0ec0d8`](https://github.com/lucas-barake/effect-form/commit/d0ec0d825e1a208d23e929f9e106031f452719a2)]:
-  - @lucas-barake/effect-form@0.7.0
+  - @voila.dev/effect-form@0.7.0
 
 ## 0.7.0
 
@@ -429,7 +438,7 @@
 ### Patch Changes
 
 - Updated dependencies [[`09d48cc`](https://github.com/lucas-barake/effect-form/commit/09d48cc36728324f0a63baebb12d00a5c7f1a579)]:
-  - @lucas-barake/effect-form@0.6.0
+  - @voila.dev/effect-form@0.6.0
 
 ## 0.6.0
 
@@ -456,7 +465,7 @@
 ### Patch Changes
 
 - Updated dependencies [[`aa80cc6`](https://github.com/lucas-barake/effect-form/commit/aa80cc66505d230b3ca0cf51419a89afd2dd4255)]:
-  - @lucas-barake/effect-form@0.5.0
+  - @voila.dev/effect-form@0.5.0
 
 ## 0.5.0
 
@@ -525,14 +534,14 @@
 
   Migration:
 
-  - `import { Form } from "@lucas-barake/effect-form"` → `import { FormBuilder } from "@lucas-barake/effect-form"`
+  - `import { Form } from "@voila.dev/effect-form"` → `import { FormBuilder } from "@voila.dev/effect-form"`
   - `Form.empty` → `FormBuilder.empty`
   - `Form.Field<S>` → `FormBuilder.FieldRef<S>`
 
 ### Patch Changes
 
 - Updated dependencies [[`046ec9f`](https://github.com/lucas-barake/effect-form/commit/046ec9f410161927bc38f767db63c4e1304f7a64)]:
-  - @lucas-barake/effect-form@0.4.0
+  - @voila.dev/effect-form@0.4.0
 
 ## 0.3.0
 
@@ -549,7 +558,7 @@
 ### Patch Changes
 
 - Updated dependencies [[`12dc7cc`](https://github.com/lucas-barake/effect-form/commit/12dc7cc1050d09e8c5c104f3a86d0d1afcc1ae8e)]:
-  - @lucas-barake/effect-form@0.3.0
+  - @voila.dev/effect-form@0.3.0
 
 ## 0.2.0
 
@@ -560,12 +569,12 @@
   - `Field.makeField`, `Field.makeArrayField` for creating field definitions
   - `Field.isFieldDef`, `Field.isArrayFieldDef` type guards
   - `Field.getDefaultEncodedValues`, `Field.createTouchedRecord` helpers
-  - Re-export `Field` from `@lucas-barake/effect-form-react` for convenience
+  - Re-export `Field` from `@voila.dev/effect-form-react` for convenience
 
 ### Patch Changes
 
 - Updated dependencies [[`58c07b5`](https://github.com/lucas-barake/effect-form/commit/58c07b594473c3ca497b29795146ead7521f9cf0)]:
-  - @lucas-barake/effect-form@0.2.0
+  - @voila.dev/effect-form@0.2.0
 
 ## 0.1.0
 
@@ -587,4 +596,4 @@
 ### Patch Changes
 
 - Updated dependencies [[`3818818`](https://github.com/lucas-barake/effect-form/commit/381881893ac58a500f69c2379ae556f55c07356c)]:
-  - @lucas-barake/effect-form@0.1.0
+  - @voila.dev/effect-form@0.1.0

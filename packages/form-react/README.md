@@ -1,5 +1,7 @@
-# @lucas-barake/effect-form-react
+# @voila.dev/effect-form-react
 
 React bindings for Effect-powered forms with type-safe validation.
 
-See [main documentation](https://github.com/lucas-barake/effect-form) for usage.
+See [main documentation](https://github.com/voila-voila-dev/effect-form) for usage.
+
+A fork of [lucas-barake/effect-form](https://github.com/lucas-barake/effect-form) (MIT), tracking the Effect v4 release candidate. React-only.

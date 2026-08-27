@@ -1,23 +1,25 @@
-# @lucas-barake/effect-form
+# @voila.dev/effect-form
 
 Type-safe forms powered by Effect Schema.
 
 > [!NOTE]
-> This branch targets **Effect v4** (beta). For the Effect v3 version, see the [v3 branch](https://github.com/lucas-barake/effect-form/tree/v3) and its [README](https://github.com/lucas-barake/effect-form/blob/v3/README.md).
+> This is a fork of [lucas-barake/effect-form](https://github.com/lucas-barake/effect-form) (MIT), tracking the **Effect v4 release candidate**. It exists because the upstream v4 line is still on beta peer ranges, and because its published `effect-form-react` resolves `^0.25.0-beta.6` to the stable v3 core, which imports the `effect/ParseResult` module the RC removed.
+>
+> Differences from upstream: the Solid bindings are gone (this fork is React-only), the toolchain is Bun + Biome + fallow rather than pnpm + oxlint + dprint, and the react package pins its core dependency to an exact version so a caret can never pick a v3 release again.
 
 ## Installation
 
-Requires Effect v4 beta, React 19, and `@effect/atom-react`.
+Requires Effect v4 RC, React 19, and `@effect/atom-react`.
 
 ```bash
-pnpm add @lucas-barake/effect-form-react@beta effect@beta @effect/atom-react@beta
+bun add @voila.dev/effect-form-react effect@rc @effect/atom-react@rc
 ```
 
 ## 1. Basic Form Setup
 
 ```tsx
 import { useAtomSet, useAtomValue } from "@effect/atom-react"
-import { FormBuilder, FormReact } from "@lucas-barake/effect-form-react"
+import { FormBuilder, FormReact } from "@voila.dev/effect-form-react"
 import * as Effect from "effect/Effect"
 import * as Option from "effect/Option"
 import * as Schema from "effect/Schema"
@@ -79,7 +81,7 @@ function LoginPage() {
 ## 2. Array Fields
 
 ```tsx
-import { Field } from "@lucas-barake/effect-form-react"
+import { Field } from "@voila.dev/effect-form-react"
 
 const orderFormBuilder = FormBuilder.empty
   .addField("title", Schema.String)
@@ -511,7 +513,7 @@ After a successful submit, all atoms registered with matching keys will rebuild.
 For fields shared across multiple forms, use `Field.makeField` to define them once:
 
 ```tsx
-import { Field, FormBuilder, FormReact } from "@lucas-barake/effect-form-react"
+import { Field, FormBuilder, FormReact } from "@voila.dev/effect-form-react"
 
 // Define reusable field
 const EmailField = Field.makeField(

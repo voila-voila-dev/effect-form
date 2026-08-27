@@ -1,0 +1,32 @@
+{
+  "finding_counts": {
+    "packages/form/src/FormAtoms.ts": {
+      "crap_moderate": {
+        "count": 1
+      }
+    },
+    "packages/form/src/Validation.ts": {
+      "complexity_high": {
+        "count": 1
+      },
+      "crap_high": {
+        "count": 1
+      }
+    },
+    "packages/form/src/internal/dirty.ts": {
+      "complexity_high": {
+        "count": 1
+      },
+      "complexity_moderate": {
+        "count": 1
+      },
+      "crap_high": {
+        "count": 1
+      }
+    }
+  },
+  "runtime_coverage_findings": [],
+  "target_keys": [
+    "packages/form/src/Validation.ts:high impact"
+  ]
+}

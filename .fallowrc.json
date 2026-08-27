@@ -1,0 +1,19 @@
+{
+	"$schema": "https://raw.githubusercontent.com/fallow-rs/fallow/main/schema.json",
+	// The published surface is the exports map of each package: `.` resolves to
+	// `src/index.ts` and `./*` to any top-level module, so every one of them is a
+	// root. `src/internal/*` is deliberately absent - it is blocked in the exports
+	// map, so it is only alive if something above it reaches it.
+	"entry": ["packages/*/src/*.ts", "packages/*/src/*.tsx"],
+	"workspaces": {
+		"patterns": ["packages/*"]
+	},
+	/* The complexity and duplication this fork inherited from upstream is not
+	   ours to pay down in one go, so it is snapshotted: `fallow audit` gates on
+	   what a change introduces, and the baselines keep the pre-existing findings
+	   out of the verdict. */
+	"audit": {
+		"dupesBaseline": ".fallow-baselines/dupes.json",
+		"healthBaseline": ".fallow-baselines/health.json"
+	}
+}

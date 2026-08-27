@@ -1,4 +1,12 @@
-# @lucas-barake/effect-form
+# @voila.dev/effect-form
+
+## 0.27.0
+
+First release of the `@voila.dev` fork, forked from `@lucas-barake/effect-form@0.25.0-beta.6`.
+
+### Minor Changes
+
+- Target the Effect v4 release candidate: the peer range is now `>=4.0.0-rc.112 <4.0.1`. No source change was needed - the upstream v4 line already spoke the RC's issue model (`SchemaIssue.makeFormatterStandardSchemaV1`, the `Filter` / `InvalidType` / `MissingKey` tags) - only the peer range moved.
 
 ## 0.25.0-beta.6
 
@@ -226,7 +234,7 @@
 
 - [#21](https://github.com/lucas-barake/effect-form/pull/21) [`ab80237`](https://github.com/lucas-barake/effect-form/commit/ab80237b5c7a338bf3e300ef539421cbef2438ce) Thanks [@lucas-barake](https://github.com/lucas-barake)! - Expose Path module as public API
 
-  The Path utilities (`schemaPathToFieldPath`, `isPathUnderRoot`, `isPathOrParentDirty`, `getNestedValue`, `setNestedValue`) are now exported as a public module via `@lucas-barake/effect-form/Path`.
+  The Path utilities (`schemaPathToFieldPath`, `isPathUnderRoot`, `isPathOrParentDirty`, `getNestedValue`, `setNestedValue`) are now exported as a public module via `@voila.dev/effect-form/Path`.
 
   This fixes an issue where `form-react` was importing from an unexported internal path, causing bundler errors in consuming applications.
 
@@ -310,7 +318,7 @@
 
   Migration:
 
-  - `import { Form } from "@lucas-barake/effect-form"` → `import { FormBuilder } from "@lucas-barake/effect-form"`
+  - `import { Form } from "@voila.dev/effect-form"` → `import { FormBuilder } from "@voila.dev/effect-form"`
   - `Form.empty` → `FormBuilder.empty`
   - `Form.Field<S>` → `FormBuilder.FieldRef<S>`
 
@@ -335,7 +343,7 @@
   - `Field.makeField`, `Field.makeArrayField` for creating field definitions
   - `Field.isFieldDef`, `Field.isArrayFieldDef` type guards
   - `Field.getDefaultEncodedValues`, `Field.createTouchedRecord` helpers
-  - Re-export `Field` from `@lucas-barake/effect-form-react` for convenience
+  - Re-export `Field` from `@voila.dev/effect-form-react` for convenience
 
 ## 0.1.0
 
