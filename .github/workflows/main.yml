@@ -1,0 +1,106 @@
+name: Main
+
+# Everything that happens when `main` moves: the checks run, then both packages
+# go to public npm.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: "Publish to npm"
+        type: boolean
+        default: true
+
+concurrency:
+  group: main
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  # Required for npm Trusted Publishing (OIDC).
+  id-token: write
+
+jobs:
+  checks:
+    name: Checks
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+
+      # Third-party action, so pinned to a SHA rather than a moving tag.
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2.2.0
+        with:
+          bun-version-file: package.json
+
+      - run: bun install --frozen-lockfile
+
+      - name: Biome
+        run: bun run ci
+
+      # `test` builds first, so this covers the typecheck and the artifact.
+      - name: Test
+        run: bun run test
+
+  publish:
+    name: Publish to npm
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    needs: checks
+    if: github.event_name == 'push' || inputs.publish
+    env:
+      # Monotonic and zero-maintenance: the patch is the run number, so every
+      # push publishes. The minor is bumped by hand when a release breaks
+      # callers - 0.27 is the fork's first line, tracking the Effect v4 RC.
+      PUBLISH_VERSION: 0.27.${{ github.run_number }}
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2.2.0
+        with:
+          bun-version-file: package.json
+
+      # Before install, so the exact pin form-react holds on the core resolves
+      # to the version this run is about to publish.
+      - name: Stamp the version
+        run: node scripts/publish-manifests.mjs stamp
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Build
+        run: bun run build
+
+      - name: Finalize the published manifests
+        run: node scripts/publish-manifests.mjs finalize
+
+      # bun packs and npm publishes, because each does one half of the job:
+      # bun is what resolves the manifests' `catalog:` refs into concrete
+      # versions, and npm is what speaks npm's OIDC trusted publishing.
+      #
+      # A token cannot publish this from a runner: npm answers a token publish
+      # with a 2FA challenge (`EOTP`), and there is nobody to type the code.
+      # OIDC has no such challenge, and leaves no long-lived credential to
+      # rotate. NODE_AUTH_TOKEN stays only as the fallback npm reaches for when
+      # OIDC is unavailable, so the failure stays legible rather than silent.
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "24"
+          registry-url: https://registry.npmjs.org
+          package-manager-cache: false
+
+      - name: Pack
+        run: |
+          cd packages/form && bun pm pack --destination "${RUNNER_TEMP}"
+          cd ../form-react && bun pm pack --destination "${RUNNER_TEMP}"
+
+      # The core goes first: form-react pins it exactly, so the other order
+      # leaves a window where the react tarball resolves to nothing.
+      - name: Publish
+        run: |
+          npm publish "${RUNNER_TEMP}"/voila.dev-effect-form-[0-9]*.tgz --access public
+          npm publish "${RUNNER_TEMP}"/voila.dev-effect-form-react-*.tgz --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

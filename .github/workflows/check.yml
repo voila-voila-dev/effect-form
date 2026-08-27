@@ -1,8 +1,8 @@
 name: Check
 
+# `main` is covered by the Main workflow, which runs the same checks before it
+# publishes, so this one only guards the way in.
 on:
-  push:
-    branches: [main]
   pull_request:
 
 concurrency:
