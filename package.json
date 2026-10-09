@@ -39,8 +39,8 @@
 		},
 		"catalogs": {
 			"effect": {
-				"effect": "4.0.0-rc.112",
-				"@effect/atom-react": "4.0.0-rc.112"
+				"effect": "4.0.2",
+				"@effect/atom-react": "4.0.2"
 			},
 			"react": {
 				"react": "19.2.6",

@@ -431,7 +431,7 @@ const TextInput: FormReact.FieldComponent<string> = ({ field }) => (
   </div>
 )
 
-import * as AsyncResult from "effect/unstable/reactivity/AsyncResult"
+import * as AsyncResult from "effect/reactivity/AsyncResult"
 
 function SubmitStatus() {
   const submitResult = useAtomValue(loginForm.submit)
@@ -492,7 +492,7 @@ The `onSubmit` callback receives:
 Invalidate reactive queries (`AtomRpc`, `AtomHttpApi`, etc.) after successful form submission using `reactivityKeys`:
 
 ```tsx
-import * as Atom from "effect/unstable/reactivity/Atom"
+import * as Atom from "effect/reactivity/Atom"
 
 const userListAtom = runtime.atom(fetchUsers).pipe(
   Atom.withReactivity(["users"])

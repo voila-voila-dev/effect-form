@@ -1,5 +1,11 @@
 # @voila.dev/effect-form-react
 
+## Unreleased
+
+### Minor Changes
+
+- Target Effect 4.0.2 stable: the peer ranges on `effect` and `@effect/atom-react` are now `^4.0.2` (were `>=4.0.0-rc.112 <4.0.1`). The reactivity modules are imported from `effect/reactivity/*` instead of `effect/unstable/reactivity/*`.
+
 ## 0.27.0
 
 First release of the `@voila.dev` fork, forked from `@lucas-barake/effect-form-react@0.26.0-beta.5`.

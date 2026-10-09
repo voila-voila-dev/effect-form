@@ -1,5 +1,11 @@
 # @voila.dev/effect-form
 
+## Unreleased
+
+### Minor Changes
+
+- Target Effect 4.0.2 stable: the peer range on `effect` is now `^4.0.2` (was `>=4.0.0-rc.112 <4.0.1`). The reactivity modules are imported from `effect/reactivity/*`, their stable home, instead of `effect/unstable/reactivity/*`.
+
 ## 0.27.0
 
 First release of the `@voila.dev` fork, forked from `@lucas-barake/effect-form@0.25.0-beta.6`.
