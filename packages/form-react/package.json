@@ -49,8 +49,8 @@
 		"react": "catalog:react"
 	},
 	"peerDependencies": {
-		"@effect/atom-react": ">=4.0.0-rc.112 <4.0.1",
-		"effect": ">=4.0.0-rc.112 <4.0.1",
+		"@effect/atom-react": "^4.0.2",
+		"effect": "^4.0.2",
 		"react": "^19.0.0"
 	}
 }

@@ -53,8 +53,8 @@ jobs:
     env:
       # Monotonic and zero-maintenance: the patch is the run number, so every
       # push publishes. The minor is bumped by hand when a release breaks
-      # callers - 0.27 is the fork's first line, tracking the Effect v4 RC.
-      PUBLISH_VERSION: 0.27.${{ github.run_number }}
+      # callers - 0.27 tracked the Effect v4 RC, 0.28 is the Effect 4 stable line.
+      PUBLISH_VERSION: 0.28.${{ github.run_number }}
     steps:
       - uses: actions/checkout@v7
 
